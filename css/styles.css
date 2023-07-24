@@ -1,0 +1,298 @@
+/*****************
+*
+* Author: Abhinav 
+*
+*****************/
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Unset Defaults and add own defaults */
+html,
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #F3F3F3;
+    /* To have smooth behavior on scroll = useful on ID links */
+    scroll-behavior: smooth;
+}
+
+p {
+    margin: 0.5rem 0;
+}
+
+/* Setting Font for all headings and other texts */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Oswald', sans-serif;
+}
+
+p,
+a,
+span,
+ul,
+li {
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+img {
+    max-width: 100%;
+    margin: auto;
+    max-height: 50vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Design Scrollbar */
+body::-webkit-scrollbar {
+    width: 0.50em;
+    background: white;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: black;
+}
+
+/* Design Selection */
+::-moz-selection {
+    /* Code for Firefox */
+    color: white;
+    background: #5a5a5a;
+}
+
+::selection {
+    color: white;
+    background: #5a5a5a;
+}
+
+
+/* Wrapper */
+.wrapper {
+    width: 100%;
+    max-width: 60rem;
+    margin: auto;
+}
+
+/* Style All Links  */
+a {
+    color: black;
+    text-decoration: none;
+    transition: all 0.25s ease-in-out;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* Header */
+
+/* Hide Desktop Header by default  */
+#desktop-header {
+    display: none;
+}
+
+.logo {
+    cursor: default;
+}
+
+/* Mobile Header */
+
+.menu-icon {
+    cursor: pointer;
+}
+
+#mobile-header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+#mobile-header li {
+    transition: all 0.25s ease-in-out;
+    padding: 0.5rem;
+    border: 1px solid black;
+    margin: 0.1rem;
+    font-weight: 400;
+}
+
+#mobile-header li:hover {
+    background-color: black;
+    color: white;
+}
+
+.logo-menu-icon-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Desktop Header */
+
+#desktop-header {
+    justify-content: space-between;
+    align-items: center;
+}
+
+#desktop-header ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    gap: 1rem;
+    justify-content: space-between;
+    font-weight: 400;
+}
+
+/* Hero Section */
+.hero-section {
+    border-top: 1px solid black;
+    padding-top: 1rem;
+}
+.hero-section h1 {
+    text-align: center;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 2.2rem;
+    margin: 0.8rem;
+    /* In order to show the text over the video */
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section p.tagline {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0.8rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.hero-section img {
+    width: 100%;
+    height: auto;
+}
+
+/* Switch Buttons */
+
+a#active {
+    opacity: 0.4;
+    cursor: default;
+    filter: grayscale(1);
+}
+
+.switch-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 2rem;
+}
+
+.content {
+    padding: 2rem;
+}
+
+.switch-heading {
+    text-align: center;
+}
+
+.switch-button i {
+    padding: 1rem;
+    border-radius: 20px;
+    min-width: 2rem;
+    text-align: center;
+    color: white;
+    min-height: 2rem;
+}
+
+i.fa-lightbulb {
+    background-color: #d8d822;
+}
+
+i.fa-users {
+    background-color: black;
+}
+
+i.fa-dollar-sign {
+    background-color: green;
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid black;
+    /* Another Grid to arrange the items in footer */
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "about-brand footer-links" "copyright-text copyright-text";
+}
+
+footer h3 {
+    margin-bottom: 0;
+}
+
+.about-brand {
+    grid-area: about-brand;
+}
+
+.footer-links {
+    grid-area: footer-links;
+    list-style: none;
+    text-align: right;
+    padding: 0;
+}
+
+.copyright-text {
+    grid-area: copyright-text;
+    text-align: center;
+}
+
+/* Responsiveness */
+
+/* Mobile Breakpoint - 768px */
+@media only screen and (min-width: 768px) {
+
+    /* Hide Mobile Header */
+    #mobile-header {
+        display: none;
+    }
+
+    /* Show Desktop Header */
+    #desktop-header {
+        display: flex;
+    }
+
+    /* Align Best Sellers heading to center */
+    .best-sellers h3 {
+        text-align: left;
+    }
+
+    /* Show two product per row */
+    .products {
+        grid-template-columns: 50% 50%;
+    }
+}
+
+/* Reveal Animation */
+
+.hero-section h1 {
+    text-align: center;
+    overflow: hidden;
+    line-height: 1;
+}
+
+.hero-section h1 span {
+    display: block;
+    animation: reveal 2s cubic-bezier(0.77, 0, 0.175, 1) 0.5s;
+}
+
+@keyframes reveal {
+    0% {
+        transform: translate(0, 100%);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
